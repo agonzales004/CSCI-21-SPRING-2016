@@ -60,25 +60,28 @@ double LaunchHumanCannonball(double initial_velocity, double launch_angle) {
   // (1) Convert launch_angle from degrees to radians
   //     [radian_angle = launch_angle * (kPI/180)]
   // CODE HERE
+  double radian_angle = launch_angle * (kPI/180);
 
   // (2) Compute final horizontal/x velocity
   //     [x_velocity = initial_velocity * cos(radian_angle)]
   // CODE HERE
-
+  double x_velocity = initial_velocity * cos(radian_angle);
   // (3) Compute final vertical/y velocity
   //     [y_velocity = initial_velocity * sin(radian_angle) * -1]
   // CODE HERE
-
+  double y_velocity = initial_velocity * sin(radian_angle) * -1;
   // (4) Compute time of flight
   //     [flight_time = (y_velocity) * 2 / -9.8]
   // CODE HERE
-
+  double flight_time = (y_velocity * 2) / -9.8;
   // (5) Compute horizontal/x distance traveled
   //     [x_distance = x_velocity * flight_time]
   // CODE HERE
-
+  double x_distance = x_velocity * flight_time;
   // (6) Return horizontal/x distance
   // CODE HERE
+  return flight_time;
+  
 }
 
 int main() {
@@ -93,5 +96,8 @@ int main() {
   MakeChange(116, quarters, dimes, nickels, pennies);
   
   
+  LaunchHumanCannonball(2.6, 6.5);
+  
+
   
 }
