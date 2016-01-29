@@ -11,6 +11,9 @@
 #include "lab_2.h"
 
 
+void MakeChange(int initial_value, int &quarters, int &dimes, int &nickels,
+                int &pennies);
+
 /*
  * Given an initial integer value (representing change to be given, such as in a
  * financial transaction), break the value down into the number of quarters,
@@ -76,4 +79,19 @@ double LaunchHumanCannonball(double initial_velocity, double launch_angle) {
 
   // (6) Return horizontal/x distance
   // CODE HERE
+}
+
+int main() {
+  
+  cout << "testing...\n";
+  
+  int quarters = 0;
+  int dimes = 0;
+  int nickels = 0;
+  int pennies = 0;
+  
+  MakeChange(116, quarters, dimes, nickels, pennies);
+  
+  
+  
 }
