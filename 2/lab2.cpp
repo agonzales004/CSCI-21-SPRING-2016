@@ -82,22 +82,24 @@ double LaunchHumanCannonball(double initial_velocity, double launch_angle) {
   // CODE HERE
   return flight_time;
   
+  
+  
 }
 
-int main() {
+/*  int main() {
+   
+    cout << "testing...\n";
   
-  cout << "testing...\n";
-  
-  int quarters = 0;
-  int dimes = 0;
-  int nickels = 0;
-  int pennies = 0;
-  
-  MakeChange(116, quarters, dimes, nickels, pennies);
-  
-  
-  LaunchHumanCannonball(2.6, 6.5);
-  
+    int quarters = 0;
+    int dimes = 0;
+    int nickels = 0;
+    int pennies = 0;
+    
+    MakeChange(116, quarters, dimes, nickels, pennies);
+    
+    
+    LaunchHumanCannonball(2.6, 6.5);
+*/
 
   
 }
