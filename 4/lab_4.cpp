@@ -23,6 +23,7 @@
 string MakeString(string label, double value, char separator) {
   // CODE HERE
   std::stringstream ss;
+
   
   ss << label << separator << value;
   
