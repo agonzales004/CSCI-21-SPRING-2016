@@ -1,13 +1,11 @@
-*
+/*
  * Name        : lab_4.cpp
- * Author      : Anthony Gonzales
+ * Author      : FILL IN
  * Description : Use branching statements, looping statements and string and
  *               character functions to complete the functions
  */
 
 #include "lab_4.h"
-#include "catch.cpp"
-
 
 /*
  * Return a string comprised of a label, followed by a space, followed by a
@@ -24,6 +22,15 @@
  */
 string MakeString(string label, double value, char separator) {
   // CODE HERE
+  std::stringstream ss;
+  
+  ss << label << separator << value;
+  
+  string someString;
+  
+  ss >>someString;
+  
+  return someString;
 }
 
 /*
@@ -36,16 +43,6 @@ string MakeString(string label, double value, char separator) {
  */
 char StringToChar(string value) {
   // CODE HERE
-  char cvalue;
-  stringstream converter(value);
-  converter.exceptions(ios_base::failbit);
-  
-  try {
-    converter >> cvalue;
-  } catch (ios_base::failure f) {
-  }
-
-  return cvalue;
 }
 
 /*
@@ -82,16 +79,6 @@ int StringToInt(string value) {
  */
 double StringToDouble(string value) {
   // CODE HERE
-  double dvalue = 0;
-  stringstream converter(value);
-  converter.exceptions(ios_base::failbit);
-
-  try {
-    converter >> dvalue;
-  } catch (ios_base::failure f) {
-  }
-
-  return dvalue;
 }
 
 /*
@@ -107,19 +94,17 @@ double StringToDouble(string value) {
  */
 bool StringToBool(string value) {
   // CODE HERE
-  bool bvalue = \0;
-  stringstream converter(value);
-  converter.exceptions(ios_base::failbit);
-
-  try {
-    converter >> bvalue;
-  } catch (ios_base::failure f) {
-  }
-
-  return bvalue;
 }
 
-int main {
+
+    int main()
+    {
+       string someString;
+        
+       cout << "hi\n\n"; 
+       
+       someString = MakeString("temp", 31.4, ':');
+       
+       cout << someString;
+    }
     
-    
-}

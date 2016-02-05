@@ -1,11 +1,11 @@
 /*
  * Name        : lab_4_unit_test.cpp
- * Author      : Anthony Gonzales
+ * Author      : Luke Sathrum
  * Description : Unit test to test Lab #4 Functionality
  * Sources     :
  */
 #define CATCH_CONFIG_MAIN
-#include "catch.cpp"
+#include "catch.hpp"
 
 #include "lab_4.h"
 
