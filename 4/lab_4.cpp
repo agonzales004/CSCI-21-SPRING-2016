@@ -44,6 +44,16 @@ string MakeString(string label, double value, char separator) {
  */
 char StringToChar(string value) {
   // CODE HERE
+  char cvalue;
+  stringstream converter(value);
+  converter.exceptions(ios_base::failbit);
+
+  try {
+    converter >> cvalue;
+  } catch (ios_base::failure f) {
+  }
+
+  return cvalue;
 }
 
 /*
@@ -80,6 +90,16 @@ int StringToInt(string value) {
  */
 double StringToDouble(string value) {
   // CODE HERE
+  double dvalue = 0.0;
+  stringstream converter(value);
+  converter.exceptions(ios_base::failbit);
+
+  try {
+    converter >> dvalue;
+  } catch (ios_base::failure f) {
+  }
+
+  return dvalue;
 }
 
 /*
@@ -95,17 +115,42 @@ double StringToDouble(string value) {
  */
 bool StringToBool(string value) {
   // CODE HERE
+  bool bvalue;
+  stringstream converter(value);
+  converter.exceptions(ios_base::failbit);
+
+  try {
+    converter >> bvalue;
+  } catch (ios_base::failure f) {
+  }
+
+  return bvalue;
 }
 
 
     int main()
     {
        string someString;
+       char someChar;
+       double someDouble;
+       bool someBool;
         
        cout << "hi\n\n"; 
        
        someString = MakeString("temp", 31.4, ':');
        
        cout << someString;
+       
+       someChar = StringToChar("Testing function");
+       
+       cout << "\n" << someChar;
+       
+       someDouble = StringToDouble("234.342");
+       
+       cout << "\n" << someDouble;
+       
+       someBool = StringToBool("True");
+       
+       cout << "\n" << someBool;
     }
     
