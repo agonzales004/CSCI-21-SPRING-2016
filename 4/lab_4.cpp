@@ -116,15 +116,31 @@ double StringToDouble(string value) {
 bool StringToBool(string value) {
   // CODE HERE
   bool bvalue;
+  char cvalue;
   stringstream converter(value);
   converter.exceptions(ios_base::failbit);
 
   try {
-    converter >> bvalue;
+    converter >> cvalue;
   } catch (ios_base::failure f) {
   }
 
-  return bvalue;
+ if (cvalue == 'T' || cvalue == 't') {
+     
+     bvalue = true;
+     
+ }
+ else if (cvalue == 'F' || cvalue == 'f') {
+     
+     bvalue = false;
+     
+ }
+ else {
+     
+     bvalue = false;
+ }
+ 
+  return bvalue;  
 }
 
 
