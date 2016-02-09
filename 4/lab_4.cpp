@@ -1,6 +1,6 @@
 /*
  * Name        : lab_4.cpp
- * Author      : FILL IN
+ * Author      : Anthony Gonzales
  * Description : Use branching statements, looping statements and string and
  *               character functions to complete the functions
  */
@@ -23,15 +23,17 @@
 string MakeString(string label, double value, char separator) {
   // CODE HERE
   std::stringstream ss;
-
-  
-  ss << label << separator << value;
+  ss.clear();
+  ss.str();
+  ss << label << " " << separator << " " << value;
+ 
   
   string someString;
   
-  ss >>someString;
+  someString = ss.str();
   
   return someString;
+  
 }
 
 /*
@@ -45,13 +47,24 @@ string MakeString(string label, double value, char separator) {
 char StringToChar(string value) {
   // CODE HERE
   char cvalue;
-  stringstream converter(value);
-  converter.exceptions(ios_base::failbit);
-
-  try {
-    converter >> cvalue;
-  } catch (ios_base::failure f) {
+  
+  if (value.length() == 0)
+  {
+    return cvalue;
   }
+  else if (value.length() == 1)
+  {
+    stringstream converter(value);
+    converter.exceptions(ios_base::failbit);
+  
+    try {
+      converter >> cvalue;
+    } catch (ios_base::failure f) {
+    }
+    return cvalue;
+  }
+  else
+  
 
   return cvalue;
 }
@@ -143,7 +156,7 @@ bool StringToBool(string value) {
   return bvalue;  
 }
 
-
+/*
     int main()
     {
        string someString;
@@ -151,7 +164,6 @@ bool StringToBool(string value) {
        double someDouble;
        bool someBool;
         
-       cout << "hi\n\n"; 
        
        someString = MakeString("temp", 31.4, ':');
        
@@ -169,4 +181,4 @@ bool StringToBool(string value) {
        
        cout << "\n" << someBool;
     }
-    
+  */
