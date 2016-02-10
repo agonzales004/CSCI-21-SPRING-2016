@@ -1,6 +1,6 @@
 #creates the executable from both the object files
 lab5test: lab_5_unit_test.o lab_5.o
-	g++ -Wall -g -o lab4test lab_5.o lab_5_unit_test.o
+	g++ -Wall -g -o lab5test lab_5.o lab_5_unit_test.o
 
 #creates the lab4 object file
 lab5: lab_5.cpp lab_5.h

@@ -79,6 +79,6 @@ TEST_CASE("Build A Message") {
   }
 
   SECTION("BuildMessage()") {
-    CHECK(BuildMessage() == "Message: empty");
+    CHECK(BuildMessage("") == "Message: empty");
   }
 }

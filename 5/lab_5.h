@@ -24,10 +24,7 @@ using std::string;
  * Displays "Hello world!" to stdout (cout) (no newline character after)
  */
 // CODE HERE (FUNCTION PROTOTYPE)
-void Hello()
-{
-    cout << "Hello World!";
-}
+void Hello();
 /*
  * Function Name: PrintMessage
  *
@@ -35,10 +32,7 @@ void Hello()
  * @param const string& - The string to display to stdout
  */
 // CODE HERE (FUNCTION PROTOTYPE)
-void PrintMessage(string Somestring)
-{
-    cout << Somestring;
-}
+void PrintMessage(string Somestring);
 /*
  * Function Name: GetAnswer
  *
@@ -46,12 +40,7 @@ void PrintMessage(string Somestring)
  * @return int - The value 42
  */
 // CODE HERE (FUNCTION PROTOTYPE)
-int GetAnswer()
-{
-    int value = 42;
-    return value;
-}
-
+int GetAnswer();
 /*
  * Function Name: FindLarger
  *
@@ -62,16 +51,7 @@ int GetAnswer()
  * @return int - The larger of the two values, or either one if they are equal
  */
 // CODE HERE (FUNCTION PROTOTYPE)
-int FindLarger(int FirstValue, int SecondValue)
-{
-    if(FirstValue >= SecondValue)
-    {
-        return FirstValue;
-    }
-    else
-        return SecondValue;
-}
-
+int FindLarger(int FirstValue, int SecondValue);
 /*
  * Function Name: BuildMessage
  *
@@ -86,41 +66,6 @@ int FindLarger(int FirstValue, int SecondValue)
  *             - Defaults to false
  */
 // CODE HERE (FUNCTION PROTOTYPE)
-string BuildMessage(string someMessage = "", bool someBool = false)
-{
-    std::stringstream ss;
-    ss.clear();
-    ss.str();
-    
-    string label = "message";
-    char separator = ':';
-    string message = someMessage;
-    string someString;
-    
-    if(message == "")
-    {
-        message = "empty";
-        ss << label << separator << " " << message;
-        someString = ss.str();
-        return someString;
-    }
-   else if(someBool == false)
-    {
-        ss << label << separator << " " << message;
-        someString = ss.str();
-        return someString;
-    }
-    else if(someBool == true)
-    {
-       for(int i = 0; i < someMessage.size(); i++)
-       {
-           someMessage.at(i) = toupper(someMessage.at(i));
-       }
-        ss << label << separator << " " << someMessage;
-        someString = ss.str();
-        return someString;
-    }
-   
-}
+string BuildMessage(string someMessage = "", bool someBool = false);
 
 #endif
