@@ -1,6 +1,6 @@
 /*
  * Name        : lab_5.cpp
- * Author      : FILL IN
+ * Author      : Anthony Gonzales
  * Description : Practicing Functions. Use this file to write your
  *               Function Definitions (what goes below main()).
  */
