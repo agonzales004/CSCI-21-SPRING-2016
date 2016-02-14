@@ -35,32 +35,35 @@ using namespace std;
  */
 string Goldilocks(string item, int number) {
   // CODE HERE
-  if ("porridge", 1)
+  if (item == "porridge" && number == 1)
     return "This porridge is too hot";
   
-  else if ("porridge", 2)
+  else if ( item == "porridge" && number == 2)
     return "This porridge is too cold";
   
-  else if ("porridge", 3)
+  else if (item == "porridge" && number == 3)
     return "This porridge is just";
     
-  else if ("chair", 1)
+  else if (item == "chair" && number == 1)
     return "This chair is too big";
     
-  else if ("chair", 2)
+  else if (item == "chair" && number == 2)
     return "This chair is too small";
     
-  else if ("chair", 3)
+  else if (item == "chair" && number == 3)
     return "TThis chair is just right";
   
-  else if ("bed", 1)
+  else if (item == "bed" && number == 1)
     return "This bed is too hard";
   
-  else if ("bed", 2)
+  else if (item == "bed" && number == 2)
     return "This bed is too soft";
   
-  else if ("bed", 3)
+  else if (item == "bed" && number == 3)
     return "This bed is just right";
+  
+  else
+     return "This bed is just right";
   
 }
 
@@ -121,6 +124,7 @@ int RockScissorPaper(char player_one, char player_two) {
     default:
       return 0;
       
+      break;
   }
   
 }
@@ -134,7 +138,7 @@ string ToLower(string input) {
   // CODE HERE
   string someInput = input;
  
-  for (int i=0; i < someInput.size(); i++){
+  for (int i = 0; i < input.size(); i++){
     someInput.at(i) = tolower(someInput.at(i));
     return someInput;
   }
@@ -149,7 +153,7 @@ string ToUpper(string input) {
   // CODE HERE
   string someInput = input;
  
-  for (int i=0; i < someInput.size(); i++){
+  for (int i=0; i < input.size(); i++){
     someInput.at(i) = toupper(someInput.at(i));
     return someInput;
   }

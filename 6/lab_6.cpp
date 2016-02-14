@@ -81,7 +81,7 @@ bool HasValue(int values[], int size, int value)
  */
 int ValueAt(int values[], int size, int index, bool &error)
 {
-  if (index > size)
+  if (index >= size)
   {
       error = true;
       return 0;
@@ -128,7 +128,7 @@ bool SwapValues(int values[], int size, int index1, int index2)
     int valueTwo;
     bool success;
     
-   if (index1 && index2 < size)
+   if (index1 < size && index2 < size && index1 >= 0 && index2 >= 0)
    {
         valueOne = values[index1];
         valueTwo = values[index2];
