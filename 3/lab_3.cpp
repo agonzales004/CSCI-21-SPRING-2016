@@ -124,7 +124,7 @@ int RockScissorPaper(char player_one, char player_two) {
     default:
       return 0;
       
-      break;
+      
   }
   
 }
