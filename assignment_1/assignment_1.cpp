@@ -72,17 +72,35 @@ bool EncryptString(string &ThisString, int ShiftChar)
 {
     string crypted = ThisString;
     bool isAlphabetic;
-    int stringSize = ThisString.size();
-    char StringChar[100];
-    string someString = ThisString;
+    int stringLength = crypted.length();
+    ShiftChar %= 26;
+    
+    if (ShiftChar < 0)
+    {
+        ShiftChar = ShiftChar %26 + 26;                                         //add the 26 if the number to shift is a negative
+    }
+    
 
-    isAlphabetic = CheckAlphabetic(someString);
+    isAlphabetic = CheckAlphabetic(crypted);
+    
     
     if (isAlphabetic == true)
     {
-             for(int i = 0; i < stringSize; i++)
+             for(int i = 0; i < stringLength; i++)
             {
-                crypted[i] += ShiftChar;
+                for (int z = 0; z < ShiftChar; z++)
+                {
+                    if (ThisString[i] == 'z')                                   //Once loop reaches z lowercase z it will return to a
+                    {
+                        ThisString[i] = 'a';
+                    }
+                    else if (ThisString[i] == 'Z')                              //Once loop reaches an Uppercase Z it will return to A
+                    {
+                        ThisString[i] = 'A';
+                    }
+                    else
+                        ThisString[i]++;
+                }
             }  
             return isAlphabetic;
     }
@@ -98,17 +116,35 @@ bool DecryptString(string &StringCrypt, int CharShift)
 {
     string crypted = StringCrypt;
     bool isAlphabetic;
-    int stringSize = StringCrypt.size();
-    char StringChar[100];
-    string someString = StringCrypt;
+    int stringLength = crypted.length();
+    CharShift %= 26;
+    
+    if (CharShift < 0)
+    {
+        CharShift = CharShift %26 + 26;                                         //add the 26 if the number to shift is a negative
+    }
+    
 
-    isAlphabetic = CheckAlphabetic(someString);
+    isAlphabetic = CheckAlphabetic(crypted);
+    
     
     if (isAlphabetic == true)
     {
-             for(int i = 0; i < StringCrypt.length(); i++)
+             for(int i = 0; i < stringLength; i++)
             {
-                crypted[i] -= CharShift;
+                for (int z = 0; z < CharShift; z++)
+                {
+                    if (StringCrypt[i] == 'a')                                   //Once loop reaches a lowercase  it will return to z
+                    {
+                        StringCrypt[i] = 'z';
+                    }
+                    else if (StringCrypt[i] == 'A')                              //Once loop reaches an Uppercase A it will return to Z
+                    {
+                        StringCrypt[i] = 'Z';
+                    }
+                    else
+                        StringCrypt[i]--;
+                }
             }  
             return isAlphabetic;
     }
@@ -120,7 +156,8 @@ double ComputeAverage(double DubArray[], unsigned int ArraySize)
 {
       double ArrayTotal;
       double Average;
-      
+     
+     
       for (int i = 0; i < ArraySize; i++)
     {
         ArrayTotal = ArrayTotal + DubArray[i];
@@ -128,31 +165,38 @@ double ComputeAverage(double DubArray[], unsigned int ArraySize)
     
     Average = ArrayTotal/ArraySize;
     
-    return Average;
+    if (Average == 0.0)
+    {
+        return 0;
+    }
+    else
+    {
+        return Average;
+    }
 }
 
 double FindMinValue(double DubArray[], unsigned int ArraySize)
 {
-     double minValue;
+     double minValue = 0;
      
       for (int i = 0; i < ArraySize; i++)
     {
         if (DubArray[i] < minValue)
         {
-            DubArray[i] = minValue;
+            minValue = DubArray[i];
         }
     }
     return minValue;
 }
 double FindMaxValue(double DubArray[], unsigned int ArraySize)
 {
-     double maxValue;
+     double maxValue = 0;
      
       for (int i = 0; i < ArraySize; i++)
     {
         if (DubArray[i] > maxValue)
         {
-            DubArray[i] = maxValue;
+            maxValue = DubArray[i];
         }
     }
     return maxValue;
