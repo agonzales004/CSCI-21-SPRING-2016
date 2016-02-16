@@ -20,7 +20,7 @@ using std::string;
 using std::stringstream;
 
 // Declare Function Prototypes Here (What goes above main)
-bool CheckAlphabetic(string &someString);
+bool CheckAlphabetic(const string &someString);
 
 int CountWords(string CountString);
 
