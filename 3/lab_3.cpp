@@ -137,11 +137,11 @@ int RockScissorPaper(char player_one, char player_two) {
 string ToLower(string input) {
   // CODE HERE
   string someInput = input;
- 
+
   for (int i = 0; i < input.size(); i++){
     someInput.at(i) = tolower(someInput.at(i));
-    return someInput;
   }
+  return someInput;
 }
 
 /*
@@ -152,11 +152,11 @@ string ToLower(string input) {
 string ToUpper(string input) {
   // CODE HERE
   string someInput = input;
- 
-  for (int i=0; i < input.size(); i++){
+  
+  for (int i = 0; i < input.size(); i++){
     someInput.at(i) = toupper(someInput.at(i));
-    return someInput;
   }
+  return someInput;
 }
 
 
@@ -190,6 +190,5 @@ string ToUpper(string input) {
     
     else 
       cout << "\nIt's a draw!";
- 
-  
 }
+ 
