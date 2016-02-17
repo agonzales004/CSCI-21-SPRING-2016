@@ -1,8 +1,8 @@
 /*
  * Name        : Anthony Gonzales
- * Author      : FILL IN
+ * Author      : 
  * Description : assignment_1
- * Sources     : FILL IN
+ * Sources     : Cplusplus.com, stackoverflow.com
  */
 
 #include "assignment_1.h"
@@ -14,7 +14,7 @@ bool CheckAlphabetic(const string &someString)
     char StringChar[100];
     int CheckTrue;
    
-   if (someString == "")
+   if (someString == "")                                                        //if string is empty returns false
    {
        isAlphabetic = false;
        return isAlphabetic;
@@ -154,7 +154,7 @@ bool DecryptString(string &StringCrypt, int CharShift)
 
 double ComputeAverage(double DubArray[], unsigned int ArraySize)
 {
-      double ArrayTotal;
+      double ArrayTotal = 0.0;                                                  //initialized to 0.0
       double Average;
      
      
@@ -163,9 +163,9 @@ double ComputeAverage(double DubArray[], unsigned int ArraySize)
         ArrayTotal = ArrayTotal + DubArray[i];
     }
     
-    Average = ArrayTotal/ArraySize;
+    Average = ArrayTotal/ArraySize;                                             //adds the array values and divides them by the number of values
     
-    if (Average == 0.0)
+    if (ArrayTotal == 0.0)
     {
         return 0;
     }
@@ -179,7 +179,7 @@ double FindMinValue(double DubArray[], unsigned int ArraySize)
 {
      double minValue = 0;
      
-      for (int i = 0; i < ArraySize; i++)
+      for (int i = 0; i < ArraySize; i++)                                       //if this array slot is smaller than minValue then this value becomes minValue
     {
         if (DubArray[i] < minValue)
         {
@@ -194,7 +194,7 @@ double FindMaxValue(double DubArray[], unsigned int ArraySize)
      
       for (int i = 0; i < ArraySize; i++)
     {
-        if (DubArray[i] > maxValue)
+        if (DubArray[i] > maxValue)                                             //if this array slot is bigger than maxValue then this value becomes maxValue
         {
             maxValue = DubArray[i];
         }
