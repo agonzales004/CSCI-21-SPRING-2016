@@ -1,6 +1,6 @@
 /*
  * Name        : lab_7.cpp
- * Author      : FILL IN
+ * Author      : Anthony Gonzales
  * Description : Working with File I/O
  */
 #include "lab_7.h"
@@ -27,13 +27,13 @@ bool ProcessFile(string filename)
 {
    string line;
    ifstream myFile;
-   myFile.open(filename.c_str());
+   myFile.open(filename.c_str());                                               //open given fiile 
    
    if (myFile.is_open())
    {
-       while (getline(myFile, line))
+       while (getline(myFile, line))                                            //loops  throush every line
        {
-          if (line == "10")
+          if (line == "10")                                                     //if line contains some number invoke appropriate function
           {
               OnTen();
           }
@@ -53,16 +53,16 @@ bool ProcessFile(string filename)
           {
               OnFifty();
           }
-          else
+          else                                                                  //if number isnt present invoke onError
           {
               OnError();
           }
        }
-       myFile.close();
+       myFile.close();                                                          //close file
        
        return true;
    }
-   else
+   else                                                                         //if fiie is unable to open return false
    {
        return false;
    }
@@ -83,14 +83,14 @@ bool ProcessFile(string filename)
  */
 void ProcessArguments(int argc, char* argv[])
 {
-    string argument;
+    string argument;                                                            //variable to store the array item in
     
   for (int i = 1; i < argc; i++)
   {
-      argument = argv[i];
+      argument = argv[i];                                                       //cycles through each slot and stores it in the variable
       
-      if (argument == "10")
-      {
+      if (argument == "10")                                                     //compares each item to see if there is a match to 10, 20, 30, 40, 50
+      {                                                                         //then invokes proper function if there is a match
           OnTen();
       }
       else if(argument == "20")
