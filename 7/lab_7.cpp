@@ -67,8 +67,54 @@ bool ProcessFile(string filename)
        return false;
    }
 }
+/*
+ * Process the argv array (command-line arguments to the program). Ignore
+ * argv[0] as that is the program name. Perform the following operations on
+ * the input values:
+ *   10 -- invoke the function OnTen
+ *   20 -- invoke the function OnTwenty
+ *   30 -- invoke the function OnThirty
+ *   40 -- invoke the function OnForty
+ *   50 -- invoke the function OnFifty
+ *   any other value -- invoke the function OnError
+ * @param int argc - Contains the number of arguments passed to the program
+ *                   on the command-line
+ * @param char *argv[] - An array containing the command-line arguments
+ */
 void ProcessArguments(int argc, char* argv[])
 {
+    string argument;
+    
+  for (int i = 1; i < argc; i++)
+  {
+      argument = argv[i];
+      
+      if (argument == "10")
+      {
+          OnTen();
+      }
+      else if(argument == "20")
+      {
+          OnTwenty();
+      }
+       else if(argument == "30")
+      {
+          OnThirty();
+      }
+       else if(argument == "40")
+      {
+          OnForty();
+      }
+       else if(argument == "50")
+      {
+          OnFifty();
+      }
+      else
+      {
+          OnError();
+      }
+      
+  }
     
 }
 
