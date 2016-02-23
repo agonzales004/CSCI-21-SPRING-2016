@@ -99,7 +99,18 @@
    */
   string Spaceship::ToString() const
   {
-      
+    std::stringstream ss;
+    ss.clear();
+    ss.str();
+    ss << name_ << "\nTop Speed:     Warp " << top_speed_ << "0" << "\nFuel Source:   ";
+    ss << fuel_source_ << "\nCrew Capacity: " << crew_capacity_;
+ 
+  
+    string someString;
+  
+    someString = ss.str();
+  
+    return someString;
   }
 
  
