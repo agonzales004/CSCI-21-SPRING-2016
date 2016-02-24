@@ -17,7 +17,7 @@
    * Set the name of this Spaceship.
    * @param string name - The name for this Spaceship
    */
-  void Spaceship::set_name(string name)
+  void Spaceship::set_name(string name)                                         //all functions are pretty self explanitory with the function comments
   {
       name_ = name;
   }
