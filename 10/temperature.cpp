@@ -144,12 +144,14 @@
       std::stringstream ss;
       ss.clear();
       ss.str();
+      ss.setf(std::ios::fixed);
+      ss.precision(2);
+      
       
       string someString;
       
       if (unit == 'K')
       {
-          //ss.precision(2);
           ss << kelvin_ << " Kelvin";
       }
       else if (unit == 'k')

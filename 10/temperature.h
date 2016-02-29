@@ -11,6 +11,7 @@
 
 #include <string>
 #include <sstream>
+#include <iomanip>
 using std::string;
 using std::stringstream;
 
