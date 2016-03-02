@@ -139,14 +139,24 @@ bool operator ==(const Money &amount1, const Money &amount2)
   int final_dollars = abs_all_cents / 100;
   int final_cents = abs_all_cents % 100;
   // If the result of the operation was negative, negate final dollars and cents
+/*
   if (all_cents < 0) 
   {
     final_dollars = -final_dollars;
-    //final_cents = -final_cents;
-  }
     
-      out << setw(2)<< setfill('$');
-      out << final_dollars << setfill('.') << setw(3) << final_cents;
+  }
+ */
+ 
+ if (all_cents < 0)
+ {
+      out << "$-" << setfill('0')<<setw(0);
+      out << final_dollars << '.'<<setfill('0') << setw(2) << final_cents;
       return out;
-    
-  }
+ }
+ else
+      out << "$" << setfill('0')<<setw(0);
+      out << final_dollars << '.'<<setfill('0') << setw(2) << final_cents;
+      return out;
+  
+
+}  
