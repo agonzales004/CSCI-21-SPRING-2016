@@ -145,7 +145,7 @@ bool operator ==(const Money &amount1, const Money &amount2)
     //final_cents = -final_cents;
   }
     
-      out << setfill('$') << setw(2);
+      out << setw(2)<< setfill('$');
       out << final_dollars << setfill('.') << setw(3) << final_cents;
       return out;
     
