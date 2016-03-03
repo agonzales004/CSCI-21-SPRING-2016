@@ -1,7 +1,7 @@
 /*
- * Name        : lab_10_unit_test.cpp
+ * Name        : lab_12_unit_test.cpp
  * Author      : Luke Sathrum
- * Description : Unit test to test Lab #26 Functionality
+ * Description : Unit test to test Lab #12 Functionality
  */
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
