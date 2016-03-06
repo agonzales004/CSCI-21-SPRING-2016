@@ -18,7 +18,7 @@ MagicItem::MagicItem(string name, unsigned int value, string description, unsign
    */
   string MagicItem::description() const
   {
-   
+   return description_;
   }
 
   /*
@@ -27,7 +27,7 @@ MagicItem::MagicItem(string name, unsigned int value, string description, unsign
    */
   unsigned int MagicItem::mana_required() const
   {
-   
+   return mana_required_;
   }
   
 
@@ -37,7 +37,7 @@ MagicItem::MagicItem(string name, unsigned int value, string description, unsign
    */
   void MagicItem::set_description(string description)
   {
-   
+   description_ = description;
   }
 
   /*
@@ -46,7 +46,7 @@ MagicItem::MagicItem(string name, unsigned int value, string description, unsign
    */
   void MagicItem::set_mana_required(unsigned int mana_required)
   {
-   
+   mana_required_ = mana_required;
   }
   
 
@@ -57,5 +57,17 @@ MagicItem::MagicItem(string name, unsigned int value, string description, unsign
    */
   string MagicItem::ToString()
   {
-   
+    std::stringstream ss;
+    ss.clear();
+    ss.str();
+    
+    
+    string item_name = Item::name();
+    unsigned int some_value = Item::value();
+    
+    ss << item_name << ", $" << some_value << ", " << description_ << ", requires " << mana_required_;
+    ss << " mana";
+    
+    string some_string = ss.str();
+    return some_string;
   }

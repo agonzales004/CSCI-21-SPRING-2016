@@ -9,7 +9,6 @@
 #define MAGIC_ITEM_H
 
 #include "item.h"
-#include "item.cpp"
 
 #include <string>
 #include <iostream>

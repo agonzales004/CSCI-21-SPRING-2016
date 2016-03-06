@@ -58,7 +58,7 @@ string Item::ToString()
     return some_string;
 }
 
-int main()
-{
+//int main()
+//{
     
-}
+//}

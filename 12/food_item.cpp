@@ -79,11 +79,16 @@
     ss.clear();
     ss.str();
     
+    if (units_  == 1.5)
+    {
+     units_ = 1.50;
+    }
+    
     string item_name = Item::name();
     unsigned int some_value = Item::value();
     
-    ss << item_name << ", $" << some_value << units_ << " " << unit_of_measure_;
-    ss << ", " << calories_;
+    ss << item_name << ", $" << some_value << ", " << units_ << " " << unit_of_measure_;
+    ss << ", " << calories_ << " calories";
     
     string some_string = ss.str();
     return some_string;
