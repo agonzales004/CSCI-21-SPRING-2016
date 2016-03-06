@@ -1,13 +1,14 @@
 /*
- * Name        : account.h
+ * Name        : savings_account.h
  * Author      : Anthony Gonzales
  * Description : Class Header File
  */
 
 // ADD HEADER GUARD HERE
-#ifndef ACCOUNT_H
-#define ACCOUNT_H
+#ifndef SAVINGS_ACCOUNT_H
+#define SAVINGS_ACCOUNT_H
 
+#include "account.h"
 #include <string>
 #include <iostream>
 #include <cstdlib>
@@ -20,7 +21,7 @@ using std::setw;
 using std::stringstream;
 
 
-class Account {
+class SavingsAccount: public Account {
  public:
   /*
    * Constructor #1.
@@ -28,16 +29,8 @@ class Account {
    * @param string name - sets name_ to name
    * @param unsigned int value - sets value_ to value
    */
-  Account(string name = "bank account", double balance = 0.0);
+  SavingsAccount(string name = "savings account", double balance = 0.0);
   
-/*
-
-  /*
-   * Accessor for name_
-   * @return string - The name_ value
-   */
-  string name() const;
-
   /*
    * Accessor for balance_
    * @return double - The balance_ value
@@ -61,9 +54,6 @@ class Account {
   
   void withdrawl(double amount);
   
-  void atm();
-
-
   /*
    * function ToString()
    * @return string containing name_, $value_
@@ -72,10 +62,8 @@ class Account {
   string ToString();
 
  private:
- //holds the name of the item
-  string name_;
   //holds the value of the item
-  double balance_;
+  double savings_balance_;
 };
 
 // REST OF HEADER GUARD GOES HERE
