@@ -79,10 +79,6 @@
     ss.clear();
     ss.str();
     
-    if (units_  == 1.5)
-    {
-     units_ = 1.50;
-    }
     
     string item_name = Item::name();
     unsigned int some_value = Item::value();
