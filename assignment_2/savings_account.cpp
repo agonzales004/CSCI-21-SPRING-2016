@@ -13,7 +13,7 @@
    */
   double SavingsAccount::view_balance() const
   {
-   
+   return savings_balance_;
   }
 
   /*
@@ -36,13 +36,13 @@
   
   void SavingsAccount::deposit(double amount)
   {
-   
+   savings_balance_ += amount;
   }
 
   
   void SavingsAccount::withdrawl(double amount)
   {
-   
+   savings_balance_ -= amount;
   }
   
   /*
