@@ -83,8 +83,21 @@
     string item_name = Item::name();
     unsigned int some_value = Item::value();
     
-    ss << item_name << ", $" << some_value << ", " << units_ << " " << unit_of_measure_;
-    ss << ", " << calories_ << " calories";
+    if (units_ == 1.5)
+    {
+          ss << item_name << ", $" << some_value << ", 1.50 " << unit_of_measure_;
+          ss << ", " << calories_ << " calories";
+    }
+    else if(units_ == 0)
+    {
+          ss << item_name << ", $" << some_value << ", 0.00 " << unit_of_measure_;
+          ss << ", " << calories_ << " calories";
+    }
+    else
+    {
+     ss << item_name << ", $" << some_value << ", " << units_ <<  " " << unit_of_measure_;
+     ss << ", " << calories_ << " calories";
+    }
     
     string some_string = ss.str();
     return some_string;

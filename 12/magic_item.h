@@ -40,7 +40,8 @@ class MagicItem: public Item {
 /*
  * Destructor
  */
- //virtual  ~MagicItem(); 
+ //virtual  
+ ~MagicItem(); 
 
   /*
    * Accessor for description_

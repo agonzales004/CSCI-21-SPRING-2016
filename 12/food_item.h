@@ -41,7 +41,8 @@ class FoodItem: public Item {
 /*
  * Destructor
  */
- //virtual  ~FoodItem(); 
+ //virtual  
+ ~FoodItem(); 
 
   /*
    * Accessor for unit_of_measure_

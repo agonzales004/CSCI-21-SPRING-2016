@@ -36,7 +36,8 @@ class Item {
 /*
  * Destructor
  */
- //virtual  ~Item(); 
+ //virtual  
+ ~Item(); 
 
   /*
    * Accessor for name_
