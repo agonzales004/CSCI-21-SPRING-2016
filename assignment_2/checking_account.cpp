@@ -9,11 +9,11 @@
   
   /*
    * Accessor for balance_
-   * @return double - The balance_ value
+   * @return double - The checking_balance_ value
    */
   double CheckingAccount::view_balance() const
   {
-   
+   return checking_balance_;
   }
 
   /*
@@ -36,21 +36,13 @@
   
   void CheckingAccount::deposit(double amount)
   {
-   
+   checking_balance_ += amount;                                                 //add amount to checking_balance_
   }
 
   
   void CheckingAccount::withdrawl(double amount)
   {
-   
+   checking_balance_ -= amount;                                                 //subtract amount from checking_balance_
   }
   
-  /*
-   * function ToString()
-   * @return string containing name_, $value_
-   * example: "bank account, balance: $25"
-   */
-  string CheckingAccount::ToString()
-  {
-   
-  }
+

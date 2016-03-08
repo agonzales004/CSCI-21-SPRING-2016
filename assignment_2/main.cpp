@@ -53,7 +53,7 @@ void atm()
         
             switch (switch_choice)
             {
-                case 1:
+                case 1:                                                         //savings account
                     system("clear");
                     cout << "Savings Account";
                     cout << "\n1. View Balanace\n2. Witdrawl\n3. Deposit\n4. Quit\n";
@@ -88,15 +88,76 @@ void atm()
                 
                 break;
                 
-                case 2:
-                    cout << "  **Checking Account**  ";
-                    cout << "1. View Balanace\n2. Witdrawl\n 3. Deposit";
+                case 2:                                                         //checking account
+                    system("clear");
+                    cout << "Checking Account";
+                    cout << "\n1. View Balanace\n2. Witdrawl\n3. Deposit\n4. Quit\n";
+                    cin >> switch_quit;
+                    
+                    if(switch_quit == 1)
+                    {
+                        cout << "$" << my_checking.view_balance() << "\n";
+                    }
+                    else if(switch_quit == 2)
+                    {
+                       double withdrawl_amount;
+                       cout << "Enter the amount to withdrawl ($x.xx) "; 
+                       cin >> withdrawl_amount;
+                       my_checking.withdrawl(withdrawl_amount);
+                    }
+                    else if(switch_quit == 3)
+                    {
+                       double deposit_amount;
+                       cout << "Enter the amount to deposit ($x.xx) "; 
+                       cin >> deposit_amount;
+                       my_checking.deposit(deposit_amount); 
+                    }
+                    else if(switch_quit == 4)
+                    {
+                        exit_ = true;
+                    }
+                    else
+                    {
+                        cout << "Invalid choice";
+                    }
+                
                 
                 break;
                 
                 case 3:
-                    cout << "  **Credit Account**  ";
-                    cout << "1. View Balanace\n2. Witdrawl\n 3. Deposit";
+                    system("clear");
+                    cout << "Credit Account";
+                    cout << "\n1. View Balanace\n2. Witdrawl\n3. Deposit\n4. Quit\n";
+                    cin >> switch_quit;
+                    
+                    if(switch_quit == 1)
+                    {
+                        cout << "$" << my_credit.view_balance() << "\n";
+                    }
+                    else if(switch_quit == 2)
+                    {
+                       double withdrawl_amount;
+                       cout << "Enter the amount to withdrawl ($x.xx) "; 
+                       cin >> withdrawl_amount;
+                       my_credit.withdrawl(withdrawl_amount);
+                    }
+                    else if(switch_quit == 3)
+                    {
+                       double deposit_amount;
+                       cout << "Enter the amount to deposit ($x.xx) "; 
+                       cin >> deposit_amount;
+                       my_credit.deposit(deposit_amount); 
+                    }
+                    else if(switch_quit == 4)
+                    {
+                        exit_ = true;
+                    }
+                    else
+                    {
+                        cout << "Invalid choice";
+                    }
+                
+                
                 
                 break;
                 
@@ -105,7 +166,9 @@ void atm()
                     system("clear");
             }//end switch
         }//end if
-    }
+    }//end while
+    system("clear");
+    cout << "\nThank you for using this ATM";
 }
 
 int main()

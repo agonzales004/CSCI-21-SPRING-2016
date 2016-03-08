@@ -29,7 +29,7 @@ class CheckingAccount: public Account {
    * @param string name - sets name_ to name
    * @param unsigned int value - sets value_ to value
    */
-  CheckingAccount(string name = "savings account", double balance = 0.0);
+  CheckingAccount(string name = "Checking account", double balance = 0.0);
   
   /*
    * Accessor for balance_
@@ -54,12 +54,7 @@ class CheckingAccount: public Account {
   
   void withdrawl(double amount);
   
-  /*
-   * function ToString()
-   * @return string containing name_, $value_
-   * example: "bank account, balance: $25"
-   */
-  string ToString();
+
 
  private:
   //holds the value of the item

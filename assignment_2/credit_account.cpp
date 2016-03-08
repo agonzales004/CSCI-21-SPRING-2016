@@ -13,7 +13,7 @@
    */
   double CreditAccount::view_balance() const
   {
-   
+   return credit_balance_;
   }
 
   /*
@@ -36,21 +36,12 @@
   
   void CreditAccount::deposit(double amount)
   {
-   
+   credit_balance_ += amount;                                                   //add deposit amount to credit_balance_
   }
 
   
   void CreditAccount::withdrawl(double amount)
   {
-   
+   credit_balance_ -= amount;                                                   //subtracts amount from credit_balance_
   }
   
-  /*
-   * function ToString()
-   * @return string containing name_, $value_
-   * example: "bank account, balance: $25"
-   */
-  string CreditAccount::ToString()
-  {
-   
-  }
