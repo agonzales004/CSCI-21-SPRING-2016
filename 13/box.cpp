@@ -15,13 +15,26 @@ template<typename T>
 class Box {
  public:
  
- Box(T newContents);
+ Box(T newContents)
+ {
+     contents = newContents;
+ }
  
- T getContents();
+ T getContents()
+ {
+     return contents;
+ }
  
- void setContents(const T value);
+ void setContents(const T value)
+{
+    contents = value;
+}
  
- friend ostream& operator<< <>(ostream& o, const Box<T>& x);
+ friend ostream& operator <<(ostream &out, const Box<T> &output)
+ {
+   out << output;
+   return out;  
+ }
 
  
  private:
@@ -40,6 +53,8 @@ T Sum(T values[], unsigned int size)
     
     return sum;
 }
+
+
 
 // REST OF HEADER GUARD GOES HERE
 #endif

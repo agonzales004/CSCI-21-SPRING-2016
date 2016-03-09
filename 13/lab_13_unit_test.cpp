@@ -9,7 +9,7 @@
  */
 #define CATCH_CONFIG_MAIN
 #include "catch.hpp"
-#include "box.h"
+#include "box.cpp"
 
  #include <iostream>
  using std::ostringstream;
