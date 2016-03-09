@@ -21,6 +21,7 @@ TEST_CASE ("Box<int> class functionality", "[Box]") {
 
 	intBox.setContents(42);
 	CHECK(intBox.getContents() == 42);
+	
 
 	ostringstream ss;
 	ss << intBox;

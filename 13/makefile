@@ -9,3 +9,7 @@ lab13: box.cpp
 #creates the unit test object file
 lab_13_unit_test: lab_13_unit_test.cpp
 	g++ -Wall -g -c lab_13_unit_test.cpp
+	
+clean:
+	rm *.o
+	rm *test

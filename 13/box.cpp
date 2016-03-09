@@ -30,9 +30,10 @@ class Box {
     contents = value;
 }
  
- friend ostream& operator <<(ostream &out, const Box<T> &output)
+ friend ostream& operator <<(ostream& out, const Box<T>& output)
  {
-   out << output;
+  
+   out<<output.contents;
    return out;  
  }
 
