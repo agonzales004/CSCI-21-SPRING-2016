@@ -6,7 +6,6 @@
          
        }
   
-/*
 
   /*
    * Accessor for name_
@@ -34,7 +33,6 @@
   {
     
   }
-
   /*
    * Mutator for balance_
    * @param double value - The value to set double_ to
@@ -43,39 +41,20 @@
   {
     balance_ = balance;
   }
-  
+  /*
+   * Mutator for balance_
+   * @param double value - The value to add to balance_
+   */
   void Account::deposit(double amount)
   {
     balance_ += amount;
   }
-  
+  /*
+   * Mutator for balance_
+   * @param double value - The value to subtract from balance_
+   */
   void Account::withdrawl(double amount)
   {
     balance_ -= amount;
   }
   
-
-  /*
-   * function ToString()
-   * @return string containing name_, $value_
-   * example: "bank account, balance: $25"
-   */
-  string Account::ToString()
-  {
-    std::stringstream ss;
-    ss.clear();
-    ss.str();
-    
-    ss << name_ << ", balance: " << balance_;
-    
-    string some_string = ss.str();
-    return some_string;
-  }
-  
-/*
-  int main()
-  {
-   Account my_account;
-   my_account.atm();
-  }
- */  

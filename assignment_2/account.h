@@ -24,9 +24,9 @@ class Account {
  public:
   /*
    * Constructor #1.
-   * Sets name and value, defaults to "item" and 0
+   * Sets name and balance, defaults to "bank account" and 0.0
    * @param string name - sets name_ to name
-   * @param unsigned int value - sets value_ to value
+   * @param double balance - sets balance_ to balance
    */
   Account(string name = "bank account", double balance = 0.0);
   
@@ -61,20 +61,12 @@ class Account {
   
   void withdrawl(double amount);
   
-  void atm();
-
-
-  /*
-   * function ToString()
-   * @return string containing name_, $value_
-   * example: "bank account, balance: $25"
-   */
-  string ToString();
+ 
 
  private:
- //holds the name of the item
+ //holds the name of the account
   string name_;
-  //holds the value of the item
+  //holds the balance of the accout
   double balance_;
 };
 

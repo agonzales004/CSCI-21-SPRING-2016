@@ -20,45 +20,30 @@ using std::setfill;
 using std::setw;
 using std::stringstream;
 
-
+//Checking Account derived from account
 class CheckingAccount: public Account {
  public:
-  /*
-   * Constructor #1.
-   * Sets name and value, defaults to "item" and 0
-   * @param string name - sets name_ to name
-   * @param unsigned int value - sets value_ to value
-   */
-  CheckingAccount(string name = "Checking account", double balance = 0.0);
+ //constructor
+ CheckingAccount(double interest = 0.0);
+ 
+ //accessor for interest_ 
+ double view_interest() const
+ {
+  return interest_;
+ }
+ 
+ //mutator for interest_
+ double change_interest(double interest)
+ {
+  interest_ = interest;
+ }
   
-  /*
-   * Accessor for balance_
-   * @return double - The balance_ value
-   */
-  double view_balance() const;
-
-  /*
-   * Mutator for name_
-   * @param string name - The string to set name_ to
-   */
-  void set_name(string name);
-
-  /*
-   * Mutator for balance_
-   * @param double value - The value to set double_ to
-   */
-  void set_balance(double balance);
-  
-  void deposit(double amount);
-
-  
-  void withdrawl(double amount);
-  
+ 
 
 
  private:
-  //holds the value of the item
-  double checking_balance_;
+  //holds the value for the interest
+  double interest_;
 };
 
 // REST OF HEADER GUARD GOES HERE

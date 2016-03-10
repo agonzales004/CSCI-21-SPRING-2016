@@ -54,12 +54,7 @@ class CreditAccount: public Account {
   
   void withdrawl(double amount);
   
-  /*
-   * function ToString()
-   * @return string containing name_, $value_
-   * example: "bank account, balance: $25"
-   */
-  string ToString();
+  
 
  private:
   //holds the value of the item
