@@ -13,9 +13,9 @@ using namespace std;
 void atm()
 {
     Account my_account;
-    Account savings("Savings Account", 0.0);
-    Account checking("Checking Account", 0.0);
-    Account credit("Credit Account", 0.0);
+    SavingsAccount savings(0.7);
+    CheckingAccount checking(2.3);
+    CreditAccount credit(500.00);
     
     bool exit_ = false;
     
@@ -127,28 +127,21 @@ void atm()
                 case 3:
                     system("clear");
                     cout << "Credit Account";
-                    cout << "\n1. View Balanace\n2. Witdrawl\n3. Deposit\n4. Quit\n";
+                    cout << "\n1. View charges\n2. Make payment\n3. Quit\n";
                     cin >> switch_quit;
                     
                     if(switch_quit == 1)
                     {
-                        cout << "$" << credit.view_balance() << "\n";
+                        cout << "$" << credit.view_limit() << "\n";
                     }
                     else if(switch_quit == 2)
                     {
-                       double withdrawl_amount;
-                       cout << "Enter the amount to withdrawl ($x.xx) "; 
-                       cin >> withdrawl_amount;
-                       credit.withdrawl(withdrawl_amount);
+                       double payment_amount;
+                       cout << "Enter the amount to pay ($x.xx) "; 
+                       cin >> payment_amount;
+                       credit.make_payment(payment_amount);
                     }
                     else if(switch_quit == 3)
-                    {
-                       double deposit_amount;
-                       cout << "Enter the amount to deposit ($x.xx) "; 
-                       cin >> deposit_amount;
-                       credit.deposit(deposit_amount); 
-                    }
-                    else if(switch_quit == 4)
                     {
                         exit_ = true;
                     }

@@ -19,20 +19,20 @@ class Box {
  {
      contents = newContents;
  }
- 
+ //accessor for contents
  T getContents()
  {
      return contents;
  }
- 
+ //mutator for contents
  void setContents(const T value)
 {
     contents = value;
 }
- 
+ //operator << overload
  friend ostream& operator <<(ostream& out, const Box<T>& output)
  {
-  
+  //assigns the contents to out and returns it
    out<<output.contents;
    return out;  
  }
@@ -49,7 +49,7 @@ T Sum(T values[], unsigned int size)
     
     for (int i = 0; i < size; i++)
     {
-        sum += values[i];
+        sum += values[i];                                                       //adds value[i] to sums
     }
     
     return sum;

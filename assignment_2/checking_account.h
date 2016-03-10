@@ -24,7 +24,11 @@ using std::stringstream;
 class CheckingAccount: public Account {
  public:
  //constructor
- CheckingAccount(double interest = 0.0);
+ CheckingAccount(double interest = 0.0)
+         : interest_(interest)
+         {
+          
+         }
  
  //accessor for interest_ 
  double view_interest() const

@@ -21,44 +21,37 @@ using std::setw;
 using std::stringstream;
 
 
+//Credit Account derived from account
 class CreditAccount: public Account {
  public:
-  /*
-   * Constructor #1.
-   * Sets name and value, defaults to "item" and 0
-   * @param string name - sets name_ to name
-   * @param unsigned int value - sets value_ to value
-   */
-  CreditAccount(string name = "credit account", double balance = 0.0);
-  
-  /*
-   * Accessor for balance_
-   * @return double - The balance_ value
-   */
-  double view_balance() const;
-
-  /*
-   * Mutator for name_
-   * @param string name - The string to set name_ to
-   */
-  void set_name(string name);
-
-  /*
-   * Mutator for balance_
-   * @param double value - The value to set double_ to
-   */
-  void set_balance(double balance);
-  
-  void deposit(double amount);
-
-  
-  void withdrawl(double amount);
-  
+ //constructor
+ CreditAccount(double limit = 500.00)
+          : credit_limit_(limit)
+          {
+           
+          }
+ 
+ //accessor for credit_limit_ 
+ double view_limit() const
+ {
+  return credit_limit_;
+ }
+ 
+ //mutator for credit_limit_
+ double change_limit(double interest)
+ {
+  credit_limit_ = credit_limit_;
+ }
+ //mutator for credit_limit_
+ double make_payment(double payment)
+ {
+  credit_limit_ -= payment;
+ }
   
 
  private:
-  //holds the value of the item
-  double credit_balance_;
+  //holds the value of credit_limit_
+  double credit_limit_;
 };
 
 // REST OF HEADER GUARD GOES HERE
