@@ -50,15 +50,18 @@ class Account {
    */
   void set_name(string name);
 
+
   /*
    * Mutator for balance_
-   * @param double value - The value to set double_ to
+   * @param double value - The value to add to balance_
    */
-  void set_balance(double balance);
   
   void deposit(double amount);
-
   
+  /*
+   * Mutator for balance_
+   * @param double value - The value to subtract form balance_
+   */
   void withdrawl(double amount);
   
  

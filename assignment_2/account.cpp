@@ -33,14 +33,7 @@
   {
     
   }
-  /*
-   * Mutator for balance_
-   * @param double value - The value to set double_ to
-   */
-  void Account::set_balance(double balance)
-  {
-    balance_ = balance;
-  }
+ 
   /*
    * Mutator for balance_
    * @param double value - The value to add to balance_
