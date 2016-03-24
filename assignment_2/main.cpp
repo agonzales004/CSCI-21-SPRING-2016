@@ -169,9 +169,7 @@ void atm()
     cout << "\nThank you for using this ATM";
 }
 
-/*
 int main()
 {
     atm();
 }
- */
