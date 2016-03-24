@@ -13,7 +13,9 @@
  */
 int* MakeDynoIntArray(unsigned int size)
 {
+    int* array = new int[size];
     
+    return array;
 }
 
 /*
@@ -26,7 +28,20 @@ int* MakeDynoIntArray(unsigned int size)
  */
 int Sum(int* the_array, unsigned int array_size)
 {
+    int sum = 0;
     
+    for(int i = 0; i < array_size; i++)
+    {
+        sum += the_array[i];
+    }
+    if(array_size == 0)
+    {
+      throw "NULL ARRAY REFERENCE";  
+    }
+    else
+    {
+        return sum;
+    }    
 }
 
 /*
@@ -39,7 +54,23 @@ int Sum(int* the_array, unsigned int array_size)
  */
 int Max(int* the_array, unsigned int array_size)
 {
+    int max = the_array[0];
     
+    for(int i = 1; i < array_size; i++)
+    {
+        if(the_array[i] > max)
+        {
+            max = the_array[i];
+        }
+    }
+    if(array_size == 0)
+    {
+        throw "NULL ARRAY REFERENCE";
+    }
+    else
+    {
+        return max;
+    }
 }
 
 /*
@@ -52,5 +83,21 @@ int Max(int* the_array, unsigned int array_size)
  */
 int Min(int* the_array, unsigned int array_size)
 {
+    int min = the_array[0];
     
+    for(int i = 1; i < array_size; i++)
+    {
+        if(the_array[i] < min)
+        {
+            min = the_array[i];
+        }
+    }
+     if(array_size == 0)
+    {
+        throw "NULL ARRAY REFERENCE";
+    }
+    else
+    {
+        return min;
+    }
 }
