@@ -28,14 +28,14 @@ class SLNode {
    * Sets next_node_ to NULL
    * sets contents_ to 0
    */
-  SLNode(SLNode* next_node = NULL, int contents = 0);
+  SLNode();
 
   /*
    * Overloaded Constructor
    * int parameter assigned to contents_
    * sets next_node to NULL
    */
-  SLNode();
+  SLNode(int contents);
 
   /*
    * Destructor
