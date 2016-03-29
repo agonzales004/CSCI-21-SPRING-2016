@@ -14,7 +14,7 @@
   SLList::SLList()
   {
       head_ = NULL;
-      size_ - 0;
+      size_ = 0;
   }
 
   /*
