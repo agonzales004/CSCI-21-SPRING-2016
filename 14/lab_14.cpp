@@ -54,23 +54,27 @@ int Sum(int* the_array, unsigned int array_size)
  */
 int Max(int* the_array, unsigned int array_size)
 {
-    int max = the_array[0];
+    int max;
     
-    for(int i = 1; i < array_size; i++)
-    {
-        if(the_array[i] > max)
-        {
-            max = the_array[i];
-        }
-    }
     if(array_size == 0)
     {
         throw "NULL ARRAY REFERENCE";
     }
     else
     {
+        int max = the_array[0];
+        
+        for(int i = 1; i < array_size; i++)
+        {
+            if(the_array[i] > max)
+            {
+                max = the_array[i];
+            }
+    
+        }
         return max;
-    }
+    }    
+     return max;
 }
 
 /*
