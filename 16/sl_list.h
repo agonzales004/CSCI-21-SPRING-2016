@@ -12,7 +12,9 @@
 #include <iostream>
 #include <cstdlib>
 #include <iomanip>
-#include "sl_node.h"
+#include <list>
+#include <iterator>
+#include <sstream>
 using std::string;
 using std::ostream;
 using std::setfill;
@@ -30,13 +32,6 @@ class SLList {
    * sets size_ to 0
    */
   SLList();
-
-  /*
-   * Overloaded Constructor
-   * int parameter assigned to contents_
-   * sets next_node to NULL
-   */
-  SLList(int contents);
 
   /*
    * Destructor

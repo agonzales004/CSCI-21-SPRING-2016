@@ -32,8 +32,10 @@
    */
   void SLList::InsertHead(int head)
   {
-      new SLNode(head);
-      
+        SLNode* node = new SLNode(head);
+        //add next_node to point to what head previously pointed to
+        head_ = (SLList*)node;
+        size_ = size_ + 1;
   }
   
    /*
@@ -44,7 +46,8 @@
   {
       if(head_ != NULL)
       {
-          
+          head_ = NULL;
+          size_ = size_ - 1;
       }
   }
 
@@ -54,7 +57,8 @@
    */
   void SLList::Clear()
   {
-      
+      head_ = NULL;
+      size_ = 0;
   }
   
    /*
@@ -73,7 +77,27 @@
    */
   string SLList::ToString() const
   {
-      
+    std::stringstream ss;
+    ss.clear();
+    ss.str();
+    
+    SLNode* temp = (SLNode*)head_;
+    
+    if(head_ != NULL)
+    {
+       ss << temp-> contents();
+    
+    }
+    else
+    {
+        ss << "";
+    }
+  
+    string someString;
+  
+    someString = ss.str();
+  
+    return someString;
   }
   
   //int main(){}
