@@ -15,6 +15,7 @@
 #include <list>
 #include <iterator>
 #include <sstream>
+#include "sl_node.h"
 using std::string;
 using std::ostream;
 using std::setfill;
@@ -74,7 +75,7 @@ class SLList {
 
  private:
  //points to the first node in a singly-linked list
-  SLList* head_; 
+  SLNode* head_; 
   //stores the count of the number of nodes in the list
   unsigned int size_;
 };

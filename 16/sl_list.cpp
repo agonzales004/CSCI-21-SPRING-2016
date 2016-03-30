@@ -4,7 +4,7 @@
  * Description : Working with Pointers and Dynamic Variables / Arrays
  */
 #include "sl_list.h"
-#include "sl_node.h"
+
 
  /*
    * Default Construcotr
@@ -34,7 +34,7 @@
   {
         SLNode* node = new SLNode(head);
         //add next_node to point to what head previously pointed to
-        head_ = (SLList*)node;
+        head_ = node;
         size_ = size_ + 1;
   }
   
@@ -81,12 +81,16 @@
     ss.clear();
     ss.str();
     
-    SLNode* temp = (SLNode*)head_;
+    SLNode* temp = head_;
     
     if(head_ != NULL)
     {
-       ss << temp-> contents();
-    
+       while(temp->next_node() != NULL)
+       {
+          ss << temp-> contents();
+       
+          temp = temp->next_node();
+       }    
     }
     else
     {
