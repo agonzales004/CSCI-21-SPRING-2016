@@ -9,11 +9,13 @@
  /*
    * Default Construcotr
    * Sets head_ to NULL
+   * Sets tail_ to NULL
    * sets size_ to 0
    */
   SLList::SLList()
   {
       head_ = NULL;
+      tail_ = NULL;
       size_ = 0;
   }
 
@@ -39,12 +41,33 @@
   }
   
    /*
+   * creates a new dynamic SLNode with the contents of 
+		 * the parameter and attaches as the last node (tail) of the list
+		 */
+  void SLList::InsertTail(int tail)
+  {
+       SLNode* node = new SLNode(tail);                                         //new node to assign to end of list
+       SLNode* temp = head_;                                                    //create temp to be an iterator
+    
+       if(head_ != NULL)
+       {
+          while(temp->next_node() != NULL)                                      //cycles through the list until null is next
+          {
+             temp = temp->next_node();                                          
+          }
+         temp->set_next_node(node);                                             //adds new node to end of list
+         tail_ = node;                                                          //assigns new node to tail_
+       } 
+          
+  }
+  
+   /*
    * removes the head node from the list,
    * or does nothing if the list is empty
    */
   void SLList::RemoveHead()
   {
-      if(head_ != NULL)
+      if(head_ != NULL && head_->next_node() != NULL)
       {
          SLNode* remove_node = NULL;
          remove_node = head_->next_node();
@@ -54,6 +77,71 @@
          free(remove_node);
          size_ = size_ - 1;
       }
+      else                                                                      //handles only 1 item in list
+      {
+        //free(head_);
+        //head_ = tail_;
+        //free(tail_);
+        //tail_ = NULL;
+      }
+      
+  }
+  
+  /*
+   * removes the last node (tail) from the list,
+	  * or does nothing if the list is empty
+   *
+   */
+  void SLList::RemoveTail()
+  {
+    if(head_ != NULL)
+    {
+      SLNode* temp = tail_;
+      SLNode* iterator = head_; 
+      
+      while(iterator->next_node() != tail_)
+      {
+        iterator = iterator->next_node();
+      }
+    // delete temp;
+     
+      
+      
+    }
+  }
+
+  /*
+   * Returns the contents of the head node
+   *  (The node head_ is pointing to)
+   *  Returns 0 if the list is empty
+   */  
+  int SLList::GetHead() const
+  {
+    if(size_ != 0)
+    {
+      return head_->contents();                                                 //returns contents of head if list isn't empty
+    }
+    else
+    {
+      return 0;                                                                 //returns 0 if empty
+    }
+  }
+  
+  /*
+   * Returns the contents of the tail node
+   *  (The node tail_ is pointing to)
+   *  Returns 0 if the list is empty
+   */
+  int SLList::GetTail() const
+  {
+    if(size_ != 0)
+    {
+      return tail_->contents();                                                 //returns contents of head if list isn't empty
+    }
+    else
+    {
+      return 0;                                                                 //returns 0 if empty
+    }
   }
 
   /*
