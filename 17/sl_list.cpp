@@ -34,10 +34,19 @@
    */
   void SLList::InsertHead(int head)
   {
-        SLNode* node = new SLNode(head);                                        //creates new node with contents from parameter head
-        node->set_next_node(head_);                                             //add next_node to point to what head previously pointed to
-        head_ = node;                                                           //assigns the newly made node to head
-        size_ = size_ + 1;                                                      //increases size by 1
+        if(head_ == NULL)
+        {
+          SLNode* node = new SLNode(head);
+          tail_ = head_ = node;
+          size_ = 1;
+        }
+        else
+        {
+          SLNode* node = new SLNode(head);
+          node->set_next_node(head_);
+          head_ = node;
+          size_++;
+        }
   }
   
    /*
@@ -46,19 +55,20 @@
 		 */
   void SLList::InsertTail(int tail)
   {
-       SLNode* node = new SLNode(tail);                                         //new node to assign to end of list
-       SLNode* temp = head_;                                                    //create temp to be an iterator
-    
-       if(head_ != NULL)
-       {
-          while(temp->next_node() != NULL)                                      //cycles through the list until null is next
-          {
-             temp = temp->next_node();                                          
-          }
-         temp->set_next_node(node);                                             //adds new node to end of list
-         tail_ = node;                                                          //assigns new node to tail_
-       } 
-          
+    if(head_ == NULL)
+    {
+      SLNode* node = new SLNode(tail);
+      tail_ = head_ = node;
+      size_ = 1;
+    }
+    else
+    {
+      SLNode* node = new SLNode(tail);
+      tail_->set_next_node(node);
+      tail_ = tail_->next_node();
+      size_++;
+    }
+     
   }
   
    /*
@@ -67,7 +77,7 @@
    */
   void SLList::RemoveHead()
   {
-      if(head_ != NULL && head_->next_node() != NULL)
+      if(head_ != NULL && size_ >= 2)
       {
          SLNode* remove_node = NULL;
          remove_node = head_->next_node();
@@ -75,16 +85,18 @@
          head_ = remove_node;
          remove_node = NULL;
          free(remove_node);
-         size_ = size_ - 1;
+         size_  = size_ - 1;
       }
-      else                                                                      //handles only 1 item in list
+      else if(size_ == 1)                                                                      //handles only 1 item in list
       {
-        //free(head_);
-        //head_ = tail_;
-        //free(tail_);
-        //tail_ = NULL;
+        tail_ = NULL;
+        head_ = tail_;
+        size_ = 0;
       }
-      
+      else
+      {
+       return;
+      }
   }
   
   /*
@@ -94,21 +106,33 @@
    */
   void SLList::RemoveTail()
   {
-    if(head_ != NULL)
+    if(head_ != NULL && size_ >=2)
     {
-      SLNode* temp = tail_;
-      SLNode* iterator = head_; 
+      SLNode* removedNode = tail_;
+      SLNode* iterator = head_;
       
       while(iterator->next_node() != tail_)
       {
         iterator = iterator->next_node();
       }
-    // delete temp;
-     
+      tail_ = iterator;
+      tail_->set_next_node(NULL);
+      delete removedNode;
       
+      size_ --;;
       
     }
+    else if(size_ == 1)
+    {
+     head_ = NULL;
+     size_ = 0;
+    }
+    else
+    {
+      return;
+    }
   }
+
 
   /*
    * Returns the contents of the head node
@@ -117,7 +141,7 @@
    */  
   int SLList::GetHead() const
   {
-    if(size_ != 0)
+    if(size_ > 0)
     {
       return head_->contents();                                                 //returns contents of head if list isn't empty
     }
@@ -134,7 +158,7 @@
    */
   int SLList::GetTail() const
   {
-    if(size_ != 0)
+    if(size_ > 0)
     {
       return tail_->contents();                                                 //returns contents of head if list isn't empty
     }
@@ -151,8 +175,10 @@
   void SLList::Clear()
   {
       head_ = NULL;
+      tail_ = NULL;
       size_ = 0;
       free(head_);
+      free(tail_);
   }
   
    /*
