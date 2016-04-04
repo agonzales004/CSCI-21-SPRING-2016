@@ -70,7 +70,7 @@ class Prize {
    * Mutator for prizeValue
    * @parameter sets prizeValue
    */
-  void setValue(string value);
+  void setValue(unsigned int value);
 
  private:
  //holds the name of the Prize

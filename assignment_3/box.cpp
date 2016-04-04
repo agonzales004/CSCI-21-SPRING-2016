@@ -15,7 +15,11 @@
    */
   Box::Box()
   {
-   
+    boxNumber = 0;
+    boxColor = "NO COLOR";
+    prizeCapacity = 5;
+    prizeCount = 0;
+    prizes[5];
   }
 
   /*
@@ -25,7 +29,11 @@
    */
   Box::Box(unsigned int number, string color, unsigned int capacity)
   {
-   
+    boxNumber = number;
+    boxColor = color;
+    prizeCapacity = capacity;
+    prizeCount = 0;
+    prizes[capacity];
   }
 
   /*
@@ -43,7 +51,7 @@
    */
   unsigned int Box::getBoxNumber() const
   {
-   
+    return boxNumber;
   }
 
   /*
@@ -52,7 +60,7 @@
    */
   string Box::getBoxColor() const
   {
-   
+    return boxColor;
   }
   
    /*
@@ -61,7 +69,7 @@
    */
   unsigned int Box::getprizeCapacity() const
   {
-   
+    return prizeCapacity;
   }
 
   /*
@@ -70,7 +78,7 @@
    */
   unsigned int Box::getPrizeCount() const
   {
-   
+    return prizeCount;
   }
 
   /*
@@ -79,7 +87,7 @@
    */
   void Box::setBoxNumber(unsigned int number)
   {
-   
+    boxNumber = number;
   }
   
   /*
@@ -88,7 +96,7 @@
    */
   void Box::setBoxColor(string color)
   {
-   
+    boxColor = color;
   }
   
   /*
@@ -98,7 +106,20 @@
    */
   bool Box::addPrize(Prize prize)
   {
-   
+    if(prizeCount >= prizeCapacity)
+    {
+      return false;                                                             //returns false if there is no room in box
+    }
+    else
+    {
+      for(int i = 0; i < prizeCapacity; i++)
+      {
+        if(prizes[i] == NULL)
+        {
+         prizes[i] = prize;
+        }
+      }
+    }
   }
   
   /*

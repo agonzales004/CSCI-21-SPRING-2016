@@ -12,7 +12,8 @@
    */
   Prize::Prize()
   {
-      
+     prizeName = "NO NAME";
+     prizeValue = 0;
   }
 
   /*
@@ -21,7 +22,8 @@
    */
   Prize::Prize(string name, unsigned int value)
   {
-      
+    prizeName = name;
+    prizeValue = value;
   }
 
   /*
@@ -30,7 +32,7 @@
    */
   Prize::~Prize()
   {
-      
+    
   }
 
   /*
@@ -48,7 +50,7 @@
    */
   string Prize::getName() const
   {
-      
+     return prizeName; 
   }
   
    /*
@@ -57,7 +59,7 @@
    */
   unsigned int Prize::getValue() const
   {
-      
+      return prizeValue;
   }
 
   /*
@@ -66,16 +68,16 @@
    */
   void Prize::setName(string name)
   {
-      
+      prizeName = name;
   }
 
   /*
    * Mutator for prizeValue
    * @parameter sets prizeValue
    */
-  void Prize::setValue(string value)
+  void Prize::setValue(unsigned int value)
   {
-      
+      prizeValue = value;
   }
   
  

@@ -113,7 +113,7 @@ class Box {
   string boxColor;
   //
   Prize scratch;
-  //for dynamix array
+  //for dynamic array
   Prize* prizes;
   //capacity of prizes
   unsigned int prizeCapacity;
