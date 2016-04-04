@@ -34,17 +34,17 @@
    */
   void SLList::InsertHead(int head)
   {
-        if(head_ == NULL)
+        if(head_ == NULL)                                                       //if no items in list
         {
-          SLNode* node = new SLNode(head);
-          tail_ = head_ = node;
+          SLNode* node = new SLNode(head);                                      //new node with contents of head
+          tail_ = head_ = node;                                                 //point head_ to new node and tail_ to head_
           size_ = 1;
         }
         else
         {
-          SLNode* node = new SLNode(head);
-          node->set_next_node(head_);
-          head_ = node;
+          SLNode* node = new SLNode(head);                                      //new node with conents of head
+          node->set_next_node(head_);                                           //new node to head_
+          head_ = node;                                                         //set new node to be head_
           size_++;
         }
   }
@@ -55,18 +55,18 @@
 		 */
   void SLList::InsertTail(int tail)
   {
-    if(head_ == NULL)
+    if(head_ == NULL)                                                           //if the list is empty
     {
-      SLNode* node = new SLNode(tail);
-      tail_ = head_ = node;
-      size_ = 1;
+      SLNode* node = new SLNode(tail);                                          //new node with contents of tail
+      tail_ = head_ = node;                                                     //tail_ to head_ and head_ to new node
+      size_ = 1;                                                                //sets size_ equal to 1
     }
-    else
+    else                                                                        //if the list is larger than 1
     {
-      SLNode* node = new SLNode(tail);
-      tail_->set_next_node(node);
-      tail_ = tail_->next_node();
-      size_++;
+      SLNode* node = new SLNode(tail);                                          //new node with contents of tail
+      tail_->set_next_node(node);                                               //set the next node from tail_ to new node
+      tail_ = tail_->next_node();                                               //set tail_ equal to that new node
+      size_++;                                                                  //increment size_
     }
      
   }
@@ -77,7 +77,7 @@
    */
   void SLList::RemoveHead()
   {
-      if(head_ != NULL && size_ >= 2)
+      if(head_ != NULL && size_ >= 2)                                           //if the list has more than 1 node
       {
          SLNode* remove_node = NULL;
          remove_node = head_->next_node();
@@ -87,7 +87,7 @@
          free(remove_node);
          size_  = size_ - 1;
       }
-      else if(size_ == 1)                                                                      //handles only 1 item in list
+      else if(size_ == 1)                                                       //handles only 1 item in list
       {
         tail_ = NULL;
         head_ = tail_;
@@ -106,23 +106,23 @@
    */
   void SLList::RemoveTail()
   {
-    if(head_ != NULL && size_ >=2)
+    if(head_ != NULL && size_ >=2)                                              //rempves tail if size of list is >=2
     {
-      SLNode* removedNode = tail_;
-      SLNode* iterator = head_;
+      SLNode* removedNode = tail_;                                              //points new node to tail_
+      SLNode* iterator = head_;                                                 //create an interator to moves through list
       
-      while(iterator->next_node() != tail_)
+      while(iterator->next_node() != tail_)                                     //cycles through list to find second to last node
       {
         iterator = iterator->next_node();
       }
-      tail_ = iterator;
-      tail_->set_next_node(NULL);
-      delete removedNode;
+      tail_ = iterator;                                                         //sets tail_ to the second to last node
+      tail_->set_next_node(NULL);                                               //points tail_ to NULL
+      delete removedNode;                                                       //removes old tail_
       
-      size_ --;;
+      size_ --;                                                                 //decrements size_                                                           
       
     }
-    else if(size_ == 1)
+    else if(size_ == 1)                                                         //handles 1 node in list
     {
      head_ = NULL;
      size_ = 0;
