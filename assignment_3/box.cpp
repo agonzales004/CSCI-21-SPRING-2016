@@ -112,13 +112,8 @@
     }
     else
     {
-      for(int i = 0; i < prizeCapacity; i++)
-      {
-        if(prizes[i] == NULL)
-        {
-         prizes[i] = prize;
-        }
-      }
+      prizes[prizeCount + 1] = prize;
+      prizeCount++;                                                             //adds prize to prizeCount
     }
   }
   
@@ -130,7 +125,14 @@
    */  
   Prize Box::getPrize(unsigned int index)
   {
-   
+    if(index < 1 || index > prizeCount)
+    {
+      return scratch;
+    }
+    else
+    {
+      return prizes[index - 1];
+    }
   }
   
   /*
@@ -141,8 +143,15 @@
    */    
   Prize Box::removePrize(unsigned int index)
   {
-   
+    if(index < 1 || index > prizeCount)
+    {
+      return scratch;
+    }
+    else
+    {
+      return prizes[index - 1];
+      prizeCount--;                                                             //removes a prize from prizeCount
+      ;
+    }
   }
   
-  int main()
-  {}

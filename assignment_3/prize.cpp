@@ -41,7 +41,14 @@
    */
   bool operator ==(const Prize &prize1, const Prize &prize2)
   {
-      
+     if(prize1 == prize2)
+     {
+         return true;
+     }
+     else 
+     {
+         return false;
+     }
   }
 
   /*
