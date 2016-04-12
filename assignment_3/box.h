@@ -8,11 +8,15 @@
 #ifndef BOX_H
 #define BOX_H
 
+#include "prize.h"
+
 #include <string>
 #include <iostream>
 #include <cstdlib>
 #include <iomanip>
-#include "prize.cpp"
+#include <algorithm>
+#include <iterator>
+#include <cstdio>
 using std::string;
 using std::ostream;
 using std::setfill;
@@ -22,7 +26,7 @@ using std::setw;
  * Class BOX
  * A class that 
  */
-class Box {
+class Box : public Prize {
  public:
   /*
    * Default Construcotr
@@ -63,7 +67,7 @@ class Box {
    * Accessor for prizeCapacity
    * @return prizeCapacity
    */
-  unsigned int getprizeCapacity() const;
+  unsigned int getPrizeCapacity() const;
 
   /*
    * Accessor for prizeCount

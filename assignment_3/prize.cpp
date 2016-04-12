@@ -5,12 +5,12 @@
  */
 #include "prize.h"
 
- /*
+/*
    * Default Construcotr
    * Sets prizeName to "NO NAME"
    * sets prizeValue to 0
    */
-  Prize::Prize()
+    Prize::Prize()
   {
      prizeName = "NO NAME";
      prizeValue = 0;
@@ -41,21 +41,14 @@
    */
   bool operator ==(const Prize &prize1, const Prize &prize2)
   {
-     if(prize1 == prize2)
-     {
-         return true;
-     }
-     else 
-     {
-         return false;
-     }
+    return (prize1.getPrizeName() == prize2.getPrizeName() && prize1.getPrizeValue() == prize2.getPrizeValue());
   }
 
   /*
    * Accessor for prizeName
    * @return prizeName
    */
-  string Prize::getName() const
+  string Prize::getPrizeName() const
   {
      return prizeName; 
   }
@@ -64,7 +57,7 @@
    * Accessor for prizeValue
    * @return prizeValule
    */
-  unsigned int Prize::getValue() const
+  unsigned int Prize::getPrizeValue() const
   {
       return prizeValue;
   }
@@ -73,7 +66,7 @@
    * Mutator for prizeName
    * @parameter sets prizeName
    */
-  void Prize::setName(string name)
+  void Prize::setPrizeName(string name)
   {
       prizeName = name;
   }
@@ -82,7 +75,7 @@
    * Mutator for prizeValue
    * @parameter sets prizeValue
    */
-  void Prize::setValue(unsigned int value)
+  void Prize::setPrizeValue(unsigned int value)
   {
       prizeValue = value;
   }

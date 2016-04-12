@@ -1,4 +1,7 @@
-#include "box.cpp"
+#include "prize.h"
+#include "box.h"
+
+
 
 using namespace std;
 
@@ -47,19 +50,19 @@ void driver()
             switch (switch_choice)
             {
                 case 1:   
+                {
                     system("clear");
                     cout << "Enter a name for your prize: ";
                     cin >> namePrize;
                     cout << "\nWhat is the value of this prize?";
                     cin >> valuePrize;
+                    myPrize.setPrizeName(namePrize);
+                    myPrize.setPrizeValue(valuePrize);
                     
-                    myPrize.setName(namePrize);
-                    myPrize.setValue(valuePrize);
                     
-                    //myBox.addPrize(myPrize);
                 
                 break;
-                
+                }
                 case 2:
                 
                 
@@ -91,7 +94,3 @@ void driver()
     
 }//end driver()
 
-int main()
-{
-    driver();
-}

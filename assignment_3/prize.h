@@ -28,14 +28,13 @@ class Prize {
    * Sets prizeName to "NO NAME"
    * sets prizeValue to 0
    */
-  Prize();
+    Prize();
 
   /*
    * Overloaded Constructor
    * parameters for all data members
    */
   Prize(string name, unsigned int value);
-
   /*
    * Destructor
    * empty
@@ -52,25 +51,25 @@ class Prize {
    * Accessor for prizeName
    * @return prizeName
    */
-  string getName() const;
+  string getPrizeName() const;
   
    /*
    * Accessor for prizeValue
    * @return prizeValule
    */
-  unsigned int getValue() const;
+  unsigned int getPrizeValue() const;
 
   /*
    * Mutator for prizeName
    * @parameter sets prizeName
    */
-  void setName(string name); 
+  void setPrizeName(string name); 
 
   /*
    * Mutator for prizeValue
    * @parameter sets prizeValue
    */
-  void setValue(unsigned int value);
+  void setPrizeValue(unsigned int value);
 
  private:
  //holds the name of the Prize
