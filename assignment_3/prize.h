@@ -28,7 +28,7 @@ class Prize {
    * Sets prizeName to "NO NAME"
    * sets prizeValue to 0
    */
-    Prize();
+   Prize();
 
   /*
    * Overloaded Constructor
