@@ -38,6 +38,6 @@ unsigned int binToDec(int num)
 
 int main()
 {
-	int dec = binToDec(11011);
+	int dec = binToDec(1011);
 	cout << dec;
 }
