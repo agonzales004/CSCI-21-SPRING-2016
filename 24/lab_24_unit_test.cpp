@@ -110,8 +110,8 @@ TEST_CASE("Building a Tree") {
     CHECK(return_bool == true);
     CHECK(tree.size() == 1);
     CHECK(tree.InOrder() == "50 ");
-  }}
-/*
+  }
+
   return_bool = false;
   return_bool = tree.Insert(20);
   SECTION("Insert(20) (the left child)") {
@@ -201,4 +201,3 @@ TEST_CASE("Building a Tree") {
     CHECK(tree.InOrder() == "25 29 30 31 32 33 34 50 75 ");
   }
 }
-*/

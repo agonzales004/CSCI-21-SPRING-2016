@@ -82,7 +82,7 @@ class BSTree {
   
   /*
    * points to the root node of a binary search tree
-   * unsigned int size_ --holds the number of nodes in the tree
+   * unsigned int size_ 
    */
    BSTNode* root_;
    

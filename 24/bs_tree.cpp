@@ -31,7 +31,8 @@
    */
   bool BSTree::Insert(int content)
   {
-     Insert(content, root_);
+    return Insert(content, root_);
+     
   }
 
   /*
@@ -55,12 +56,12 @@
     */
   string BSTree::InOrder()
   {
-      if(root_ == NULL)
+      if(root_ != NULL)
       {
-        return "";
+        return InOrder(root_);
       }
       else
-        InOrder(root_);
+        return "";
   }
  
   /*
@@ -70,24 +71,24 @@
    */
   bool BSTree::Insert(int content, BSTNode*& leaf)
   {
-    if(root_ == NULL)
+    if(leaf == NULL)
     {
-      BSTNode* rootNode = new BSTNode(content);
-      root_ = rootNode; //<-----Getting a SEG FAULT HERE
-      
-      size_= 1;
-      return true;
-      
-    }
-    else if(root_ != NULL)
-    {
-      
-      
-      size_++;
+      leaf = new BSTNode(content);
+      size_ ++;
       return true;
     }
-    
-    
+    else if(content < leaf-> contents())
+    {
+     Insert(content, leaf->left_child());
+    }
+    else if(content > leaf-> contents())
+    {
+     Insert(content, leaf->left_child());
+    }
+    else if(content == leaf->contents())
+    {
+      return false;
+    }
   }
   
   /*
@@ -117,14 +118,21 @@
     ss.str();
     string someString;
     
-   
-    InOrder(node->left_child());
-    ss << node->contents() << " ";
-    InOrder(node->right_child());
-    
-    
-    
-    
+    if(node != NULL)
+    {
+      if(node->left_child())
+      {
+        InOrder(node->left_child());
+      }
+      
+      ss << node->contents() << " ";
+      
+      if(node->right_child())
+      {
+        InOrder(node->right_child());
+      }
+    }
+
     someString = ss.str();
     return someString;
     

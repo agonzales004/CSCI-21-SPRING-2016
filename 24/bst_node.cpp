@@ -5,7 +5,7 @@
  */
 #include "bst_node.h"
 
- /*
+ /* 
    * Default Construcotr
    * Sets left child to NULL
    * Sets right child to NULL
