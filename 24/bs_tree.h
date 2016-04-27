@@ -13,6 +13,7 @@
 #include <cstdlib>
 #include <iomanip>
 #include "bst_node.h"
+#include <sstream>
 using std::string;
 using std::ostream;
 using std::setfill;
@@ -63,13 +64,13 @@ class BSTree {
    * if the integer is already in the tree, does not insert, and
    * returns false
    */
-  bool Insert(int content, BSTNode& node); 
+  bool Insert(int content, BSTNode*& node); 
   
   /*
    * clears the entire contents of the tree,
    * freeing all memory associated with all nodes
    */
-  void Clear(BSTNode& node);
+  void Clear(BSTNode*& leaf);
   
   /*
    * creates a string of the data in all nodes in the tree, in
