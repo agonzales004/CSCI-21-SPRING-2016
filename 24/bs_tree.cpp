@@ -56,12 +56,7 @@
     */
   string BSTree::InOrder()
   {
-      if(root_ != NULL)
-      {
-        return InOrder(root_);
-      }
-      else
-        return "";
+      return InOrder(root_);
   }
  
   /*
@@ -83,7 +78,7 @@
     }
     else if(content > leaf-> contents())
     {
-     Insert(content, leaf->left_child());
+     Insert(content, leaf->right_child());
     }
     else if(content == leaf->contents())
     {
@@ -97,13 +92,13 @@
    */
   void BSTree::Clear(BSTNode*& leaf)
   {
-      size_ = 0;
       if(leaf != NULL)
       {
         Clear(leaf->left_child());
         Clear(leaf->right_child());
         free(leaf);
       }
+      size_ = 0;
   }
   
   /*
@@ -112,29 +107,30 @@
    * after the last output
    * value)
    */
+    
+    
+   
   string BSTree::InOrder(BSTNode* node)
   {
     std::stringstream ss;
     ss.str();
-    string someString;
+    
     
     if(node != NULL)
     {
-      if(node->left_child())
-      {
-        InOrder(node->left_child());
-      }
-      
+      ss << InOrder(node -> left_child());
       ss << node->contents() << " ";
-      
-      if(node->right_child())
+      if(node->right_child() != NULL)
       {
-        InOrder(node->right_child());
+          ss << InOrder(node -> right_child());
       }
+      
     }
-
-    someString = ss.str();
-    return someString;
+   
+   
+  string someString = ss.str();
+  return someString;
+   
     
   }
   
