@@ -97,8 +97,10 @@
         Clear(leaf->left_child());
         Clear(leaf->right_child());
         free(leaf);
+        leaf = NULL
+        size_ --;
       }
-      size_ = 0;
+      
   }
   
   /*

@@ -1,3 +1,15 @@
+/*
+ * Name        : bst_node.h
+ * Author      : Anthony Gonzales
+ * Description : Class Header File
+ */
+
+// ADD HEADER GUARD HERE
+#ifndef NODE_H
+#define NODE_H
+
+#include <string>
+#include <iostream>
 #include <cstdlib>
 #include <iomanip>
 using std::string;

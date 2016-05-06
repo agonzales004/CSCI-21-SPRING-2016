@@ -187,6 +187,7 @@ TEST_CASE("Building a Tree") {
     CHECK(tree.FindMin() == 0);
     CHECK(tree.Remove(1) == false);
   }
+  
 
   SECTION("Insert() Stress Test") {
     CHECK(tree.Insert(50) == true);

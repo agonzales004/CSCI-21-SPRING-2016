@@ -32,7 +32,7 @@
   } 
 
   /*
-   * Destructor
+   * Destructors
    * sets left_child to NULL
    * sets right_child to NULL
    */
