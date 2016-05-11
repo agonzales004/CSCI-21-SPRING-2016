@@ -41,24 +41,29 @@ int BubbleSort(int the_array[], unsigned int size)
 
 int OptimizedBubbleSort(int the_array[], unsigned int size)
 {
-     int j;
      int swaps = 0;
      int arraySize = (int)size;
-     int bound = arraySize - 1;
-    for(int i = 0 ; i < arraySize - 2 ; i++)
-    {
-        swaps++;
-        
-        for(j = 0 ; j < bound ; j++)
-        {
-            if (the_array[j] > the_array[j + 1])
-            {
-                SwapValues(the_array[j], the_array[j+1]);
-            }            
-        }
-        bound = j-1;
-    }
+     
+    for(int i=0; i<arraySize; i++)
+    {  
+      swaps++;  
+      bool flag = false;
+       for(int j=0; j<arraySize-i-1; j++)
+       {
+          if(the_array[j]>the_array[j+1])
+          {
+            flag = true;
+            SwapValues(the_array[j+1], the_array[j]);
+          }    
+       }
+    
+     if(!flag)
+     {
+         break;
+     }
+   }
     return swaps;
+    
 }
 
 int SelectionSort(int the_array[], unsigned int size)
