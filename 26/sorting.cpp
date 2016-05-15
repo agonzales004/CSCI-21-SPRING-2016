@@ -20,22 +20,21 @@ void SwapValues(int &value_1, int &value_2) {
 
 int BubbleSort(int the_array[], unsigned int size)
 {
-    int j;
-    int swaps = -1;
-    int arraySize = (int)size;
+  int swaps = 0;
+  int arraySize = (int)size;
   
-    for (int i = 0; i < arraySize; i++)
+ for(int i = arraySize - 1; i >= 1; i--)
+ {   
+    swaps++; 
+     
+   for(int j = 0; j < i; j++)
+   {
+    if(the_array[j]>the_array[j+1])
     {
-        swaps++;
-        
-        for (j = i + 1; j < arraySize; j++)
-        {
-            if (the_array[j] < the_array[i])
-            {
-                SwapValues(the_array[i], the_array[j]);
-            }
-        }    
+      SwapValues(the_array[j], the_array[j+1]);
     }
+   }
+  }
   return swaps;
 }
 
@@ -44,11 +43,11 @@ int OptimizedBubbleSort(int the_array[], unsigned int size)
      int swaps = 0;
      int arraySize = (int)size;
      
-    for(int i=0; i<arraySize; i++)
+    for(int i = arraySize - 1; i >= 1; i--)
     {  
       swaps++;  
       bool flag = false;
-       for(int j=0; j<arraySize-i-1; j++)
+       for(int j=0; j < i; j++)
        {
           if(the_array[j]>the_array[j+1])
           {
@@ -57,7 +56,7 @@ int OptimizedBubbleSort(int the_array[], unsigned int size)
           }    
        }
     
-     if(!flag)
+     if(flag == false)
      {
          break;
      }
@@ -110,22 +109,26 @@ int InsertionSort(int the_array[], unsigned int size)
 
 int ShellSort(int the_array[], unsigned int size)
 {
-  int gap, j;
-  int arraySize = (int)size;
   int swaps = 0;
-
-    for (gap = arraySize/2; gap > 0; gap /= 2)
-    {
-        swaps++;
-        for (int i = gap; i < arraySize; i++)
-        {
-            for (j=i-gap; j>=0 && the_array[j]>the_array[j+gap]; j-=gap) 
-            {
-                SwapValues(the_array[j], the_array[j+gap]);
-            }
-        }    
-    }  
-     
-    return swaps;
+  int arraySize = (int)size;
+  int h = size / 2;
+  while(h > 0)
+  {   
+    swaps++;
+    for(int i = h; i <= arraySize - 1; i++)
+    { 
+      int tmp = the_array[i];
+      int j = i;
+      while(j >= h && the_array[j -h] > tmp)
+      {
+        the_array[j] = the_array[j - h];
+        j = j - h;
+      }
+      the_array[j] = tmp;
+      DisplayArray(the_array);
+    }
+    h = h/2;
+  }
+  return swaps;
 }
 

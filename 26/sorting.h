@@ -8,8 +8,6 @@
 #define LAB_H
 
 #include <iostream>
-#include <algorithm>
-#include <vector>
 #include <string>
 using std::cout;
 using std::endl;
@@ -18,6 +16,9 @@ using std::string;
 // For Testing, DO NOT ALTER!
 extern bool GRADER;
 bool CompareArrays(int array_one[], int array_two[], unsigned int size);
+void DisplayArray(int values[]);
+
+
 /*
  * Apply the bubble sort algorithm to sort an array of integers.
  * @param int[] the_array - The integer array to be sorted
