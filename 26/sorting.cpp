@@ -1,6 +1,6 @@
 /*
  * Name        : sorting.cpp
- * Author      : FILL IN
+ * Author      : Anthony Gonzales
  * Description : Working with Insertion and Shell Sort
  */
 #include "sorting.h"
