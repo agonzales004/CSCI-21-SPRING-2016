@@ -31,7 +31,7 @@
    * creates a new dynamic DLNode with the contents of 
    * the parameter and attaches as the new head of the list
    */
-  void DLList::pushFront(int newContents)
+  void DLList::pushFront(string newContents)
   {
         if(head_ == NULL)                                                       //if no items in list
         {
@@ -52,7 +52,7 @@
    * creates a new dynamic DLNode with the contents of 
 		 * the parameter and attaches as the last node (tail) of the list
 		 */
-  void DLList::pushBack(int newContents)
+  void DLList::pushBack(string newContents)
   {
     if(head_ == NULL)                                                           //if the list is empty
     {
@@ -75,40 +75,9 @@
    * will be sorted with the lowest values in the front (head) and the
    * largest values in the back (tail).
    */
-  void DLList::insert(int newContents)
+  void DLList::insert(string newContents)
   {
-       if(head_ == NULL)                                                        //handles empty list
-       {
-         pushFront(newContents);
-       }
-       else                                                                     //handles at least 1 item in list
-       {
-         
-        if(newContents <= head_->getContents())                                 //handles if value is less than head_
-         {
-           pushFront(newContents);
-         }
-         else if(newContents >= tail_->getContents())                           //handles if value is greater than tail_                                   
-         {
-           pushBack(newContents);                                                       
-         }
-         else                                                                   //all other cases
-         {
-          DLNode* node = new DLNode(newContents);
-          DLNode* temp = head_;
-          DLNode* prev = NULL;
-           
-           while(temp->getContents() < newContents)
-           {
-             prev = temp;
-             temp = temp->getNext();
-           }
-           prev->setNext(node);
-           node->setNext(temp);
-           
-           count++; 
-         }
-       }
+     
   }
   
   /*
@@ -117,7 +86,7 @@
    * throw exception(throw "LIST EMPTY")
    * if list is empty
    */
-  int DLList::getFront() const
+  string DLList::getFront() const
   {
     if(count > 0)
     {
@@ -135,7 +104,7 @@
    * throw exception(throw "LIST EMPTY")
    * if list is empty
    */
-  int DLList::getBack() const
+  string DLList::getBack() const
   {
     if(count > 0)
     {
@@ -151,7 +120,7 @@
    * Returns true if target is in the list
    * else returns false
    */  
-  bool DLList::get(int target)
+  bool DLList::get(string target)
   {
     if(head_)                                                                   //enters if there is something in list
     {
@@ -242,7 +211,7 @@
    * removal or false if the list is empty or if the value
    * is not found
    */
-  bool DLList::removeFirst(int target)
+  bool DLList::removeFirst(string target)
   {
     DLNode* prev = NULL;
     DLNode* del = NULL;
@@ -287,7 +256,7 @@
    * remove all instances of DLNode containing target; 
    * do nothing if target is not found
    */  
-  bool DLList::removeAll(int target)
+  bool DLList::removeAll(string target)
   {
       bool isTrue = true;
       

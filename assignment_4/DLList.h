@@ -31,7 +31,8 @@ using std::stringstream;
  * Class SLList.
  * A class that 
  */
-class DLList {
+class DLList : public DLNode 
+{
  public:
   /*
    * Default Construcotr
@@ -51,13 +52,13 @@ class DLList {
    * creates a new dynamic DLNode with the contents of 
    * the parameter and attaches as the new head of the list
    */
-  void pushFront(int newContents);
+  void pushFront(string newContents);
   
   /*
    * creates a new dynamic DLNode with the contents of 
 		 * the parameter and attaches as the last node (tail) of the list
 		 */
-  void pushBack(int newContents);
+  void pushBack(string newContents);
   
    /*
    * creates a new DLNode with the contents of the parameter and
@@ -65,7 +66,7 @@ class DLList {
    * will be sorted with the lowest values in the front (head) and the
    * largest values in the back (tail).
    */
-  void insert(int newContents); 
+  void insert(string newContents); 
   
   /*
    * Returns the contents of the head node
@@ -73,7 +74,7 @@ class DLList {
    * throw exception(throw "LIST EMPTY")
    * if list is empty
    */
-  int getFront() const;
+  string getFront() const;
   
   /*
    * Returns the contents of the tail node
@@ -81,13 +82,13 @@ class DLList {
    * throw exception(throw "LIST EMPTY")
    * if list is empty
    */
-  int getBack() const;
+  string getBack() const;
   
   /*
    * Returns true if target is in the list
    * else returns false
    */  
-  bool get(int target);
+  bool get(string target);
   
   /*
    * removes the head node from the list,
@@ -107,13 +108,13 @@ class DLList {
    * removal or false if the list is empty or if the value
    * is not found
    */
-  bool removeFirst(int target);
+  bool removeFirst(string target);
   
   /*
    * remove all instances of DLNode containing target; 
    * do nothing if target is not found
    */  
-  bool removeAll(int target);
+  bool removeAll(string target);
 
   /*
    * clear all nodes from list, reset count to zero, 

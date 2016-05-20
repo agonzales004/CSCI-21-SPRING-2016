@@ -36,7 +36,7 @@ class DLNode {
    * sets next_node to NULL
    * sets previous_node_ to NULL
    */
-  DLNode(int contents);
+  DLNode(string contents);
 
   /*
    * Destructor
@@ -48,7 +48,7 @@ class DLNode {
    * Mutator for contents_
    * @param int some_contents to set contents_ to
    */
-  void setContents(int newContents);
+  void setContents(string newContents);
 
    /*
    * Mutator for next_node_
@@ -66,7 +66,7 @@ class DLNode {
    * Accessor for contents_
    * @return contents_
    */
-  int getContents() const;
+  string getContents() const;
   /*
    * Accessor for next_node_
    * @return next_node_
@@ -79,14 +79,12 @@ class DLNode {
    */
   DLNode* getPrevious() const; 
 
-
- private:
   //points to the next node in a doubley-linked list
   DLNode* next_node_;  
   //points to previous node in a doubley-linked list
   DLNode* previous_node_;
   //stores the data contents of a SLNode
-  int contents_;
+  string contents_;
 };
 
 // REST OF HEADER GUARD GOES HERE
